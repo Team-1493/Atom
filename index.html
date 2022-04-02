@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<script src="C:\Users\Falcons1493\Atom\myscript.js"></script>
+<script src="C:\Users\Falcons1493\Atom\readFile.js"></script>
+<script src="C:\Users\Falcons1493\Atom\graph.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<head>
+<title>Page Title</title>
+</head>
+
+<body>
+<h1>Falcon Data Plotter</h1>
+<p style="font-size:20px;color:red" id="demo">No Data.</p>
+<p style="font-size:20px;color:red" id="notes"> </p>
+<p style="font-size:20px;color:red" id="notes1"> </p>
+
+<br>
+
+<input type="file" id="uploadfile" onChange="readFile(this)">
+<script>
+    const fileSelector = document.getElementById('file-selector');
+    fileSelector.addEventListener('change', (event) => {
+    const fileList = event.target.files;
+    console.log(fileList);
+    readFile(); });
+  </script>
+
+<table id="table", border="1">
+  <th> Data </th>
+</table>
+
+<button onclick="graph()"> Make Plot</button>
+
+
+
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+
+
+</body>
+
+
+<html>
